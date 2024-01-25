@@ -1,5 +1,11 @@
-data = {
-    "ID_producto":{
+var fs = require('fs')
+
+var arch = fs.readFileSync('test.json')
+
+data = JSON.parse(arch)
+
+var data3 = {
+    "ID_producto_3":{
         "SKU":"Código de 6 cifras",
         "modelo":"Modelo del producto",
         "departamento":"Por ejemplo, hogar, ropa, comestibles, etc",
@@ -18,23 +24,12 @@ data = {
     }
 }
 
-console.log(data.ID_producto.reviews.ID_review.fecha)
+data["productos"].push(data3)
 
 jsonData = JSON.stringify(data,null,4)
 
-dictData = JSON.parse(jsonData)
-
-console.log(dictData.ID_producto.reviews.ID_review)
-
-var fs = require('fs');
 fs.writeFile('test.json', jsonData, 'utf8',function(err) {
     if (err) {
         console.log(err);
     }
 });
-/*var fs = require('fs');
-fs.writeFile("test.json", jsonData, function(err) {
-    if (err) {
-        console.log(err);
-    }
-});*/
