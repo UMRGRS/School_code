@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta API</title>
+</head>
+
+<body style="display: grid;">
+
+    <label id="owo">OwO</label>
+    <img id="imagen">
+    <script>
+        fetch("https://api.nekosapi.com/v3/images/random").
+            then((res) => {
+                if (res.status == 200) {
+                    return res.json()
+                }
+            }).then((data) => {
+                document.getElementById("imagen").src = data['items'][0]['image_url']
+            })
+    </script>
+</body>
+
+</html>
