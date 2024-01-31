@@ -1,8 +1,12 @@
+//Importar el modulo para manejo de archivos
 var fs = require('fs');
 
-var dicSup = {"productos":[]}
+//Creamos un diccionario con la key "productos" y una lista como valor
+var products = {"productos":[]}
 
-var data1 = {
+//Creamos dos diccionarios de prueba
+//Esto se convertirá en json
+var data_1 = {
     "ID_producto":{
         "SKU":"Código de 6 cifras",
         "modelo":"Modelo del producto",
@@ -22,7 +26,7 @@ var data1 = {
     }
 }
 
-var data2 = {
+var data_2 = {
     "ID_producto_2":{
         "SKU":"Código de 6 cifras",
         "modelo":"Modelo del producto",
@@ -42,15 +46,15 @@ var data2 = {
     }
 }
 
-dicSup['productos'].push(data1)
+//Accedemos a la lista en la key productos y agregamos ambos diccionarios
+products['productos'].push(data_1)
 
-dicSup['productos'].push(data2)
+products['productos'].push(data_2)
 
+//Para guardar los datos primero hay que convertir nuestro objeto en json
+jsonData = JSON.stringify(products,null,4)
 
-jsonData = JSON.stringify(dicSup,null,4)
-
-dictData = JSON.parse(jsonData)
-
+//Writefile crea un nuevo archivo si no existe o sobrescribe el mismo si ya existe
 fs.writeFile('test.json', jsonData, 'utf8',function(err) {
     if (err) {
         console.log(err);
