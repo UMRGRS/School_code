@@ -1,19 +1,22 @@
 {
-    "ID_producto":{
+    "ID_producto": "Entero sin signo",
+    "Info_producto":{
         "SKU":"Código de 6 cifras",
         "modelo":"Modelo del producto",
         "departamento":"Por ejemplo, hogar, ropa, comestibles, etc",
         "descripcion":"Descripción del producto",
-        "valor":{
+        "precio":{
             "pesos":"Valor con punto decimal",
             "dolares":"Valor con punto decimal"
         },
-        "reviews":{
+        "reviews":[
+            {
             "ID_review":{
                 "fecha":"Fecha y hora",
                 "calificacion":"Entero con rango 1-5",
                 "texto":"Texto de la review"
             }
         }
+    ]
     }
 }
