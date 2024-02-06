@@ -15,11 +15,6 @@ estudiantes = []
 for nombre in nombres:
     estudiantes.append(Estudiante(nombre))
 
-mayor = None
-for estudiante in estudiantes:
-    if(mayor == None):
-        mayor=estudiante
-    elif(estudiante.grade > mayor.grade):
-        mayor = estudiante
+mayor = max(estudiantes, key=lambda estu: estu.grade)
 
 print(mayor)
