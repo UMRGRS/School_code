@@ -12,7 +12,7 @@
     <label id="owo">OwO</label>
     <img id="imagen">
     <script>
-        fetch("https://api.nekosapi.com/v3/images/random").
+        fetch("https://api.nekosapi.com/v3/images/random?rating=safe").
             then((res) => {
                 if (res.status == 200) {
                     return res.json()
